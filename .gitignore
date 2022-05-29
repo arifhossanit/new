@@ -1,0 +1,9 @@
+/application/config/ajax_config.php
+/application/helpers/alert_helper.php
+/application/config/database.php
+/assets/uploads
+/vendor
+/application/controllers/Dashboard.php
+/building_images
+/images
+/assets/corn_jobs/logs

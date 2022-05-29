@@ -1,0 +1,184 @@
+if(!empty($mem['photo_avater'])){
+				if(url_check($home.$mem['photo_avater'])){
+					return '<img src="'.$home.$mem['photo_avater'].'" style="width:40px;" class="image-responsive"/>';
+				}else{
+					return '<img src="'.$home.'assets/img/empty-user-xs.png" style="width:40px;" class="image-responsive"/>';
+				}				
+			}else{
+				return '<img src="'.$home.'assets/img/empty-user-xs.png" style="width:40px;" class="image-responsive"/>';
+			}
+			
+if(check_permission('role_1606370617_73')){ ?>
+							<button class="btn btn-success myButton" data-toggle="modal" data-target="#add-booking" style="float:right;"><i class="fas fa-plus-square"></i> &nbsp;&nbsp;Add Booking</button>
+							<?php }			
+							
+							
+$sql = $member_directory.';';
+				$sql .= $booking_information.';';
+				$sql .= $account_information.';';
+				$sql .= $update_bed_info.';';
+				$sql .= $transaction_information.';';
+				$sql .= $shpont_information.';';
+				$sql .= $activity_log.';';
+				if($mysqli->multi_query($sql)){			
+
+240,276
+
+Rental Account
+Refreshment Iteam
+Deposit Return Account
+Booking Account
+
+
+22002061
+
+
+Walk In Customer
+
+09_12_2020__10_10_37_PM_116954000_1095815281779115707
+
+
+
+
+
+
+
+
+
+
+
+
+
+if(isset($_POST['branch_id_hrad'])){
+				$form_branch_id = $_POST['branch_id_hrad'];
+				$data['drop_down_v_id'] = $_POST['branch_id_hrad'];
+			}else{
+				$form_branch_id = '';
+				$data['drop_down_v_id'] = '';
+			}
+			if($_SESSION['super_admin']['role_id'] == '2805597208697462328'){  // SUPER ADMIN=============
+				if(!empty($form_branch_id)){
+					$branches = "and branch_id = '".$form_branch_id."'";
+					$pck_branches = "where branch_id = '".$form_branch_id."'";
+				}else{
+					$branches = "";
+					$pck_branches = "";
+				}
+				$data['banches'] = $this->Dashboard_model->select('branches',array('status'=>'1'),'id','ASC','result');
+			}else{
+				$role_id = $_SESSION['super_admin']['role_id'];
+				$condition_per = array(
+					'role_id' => $role_id
+				);				
+				$branch_per = $this->Dashboard_model->select('branch_permission',$condition_per,'id','desc','row');
+				$branchids = explode(",",$branch_per->permission);
+				$branches = '';
+				$get_branch = '';
+				$ides_branch = '0';
+				foreach($branchids as $row){
+					if($row != '0'){
+						$branches .= "'".$row."',";
+						$ides_branch = '1';
+					}
+				}
+				if($ides_branch == '1'){				
+					if(!empty($form_branch_id)){
+						$get_branch = "'".$form_branch_id."'";						
+					}else{
+						$get_branch = rtrim($branches,",");
+					}
+
+					$get_branch_branch = rtrim($branches,",");
+					$data['banches'] = $this->Dashboard_model->mysqlii("SELECT * FROM branches where branch_id in (".$get_branch_branch.")");
+
+				
+				}else{
+					$branch_id = $_SESSION['super_admin']['branch'];									
+					$data['banches'] = $this->Dashboard_model->mysqlii("SELECT * FROM branches where branch_id = '".$branch_id."'");
+				}				
+			}
+
+
+if(!empty($_GET['branch_id'])){	
+	if($_GET['branch_id'] == '1'){
+		$branch_user = "";
+	}else{
+		$row_b = mysqli_fetch_assoc($mysqli->query("select * from branches where branch_id = '".rahat_decode($_GET['branch_id'])."'"));
+		if(!empty($row_b['branch_id'])){
+			$branch_user = "branch_id = '".$row_b['branch_id']."' AND ";
+		}else{
+			$branch_user = "";
+		}
+	}
+}else{
+	$branch_user = "";
+}
+
+
+
+<div class="col-sm-2">
+											<div class="form-group" style="margin:0px;">
+												<select onchange="return booking_report_table();" class="form-control select2" id="branch_id_hrad">
+													<option value="1">All Branches</option>
+													<?php 
+													if(!empty($banches)){
+														foreach($banches as $row){
+															echo '<option value="'.rahat_encode($row->branch_id).'">'.$row->branch_name.'</option>';
+														}
+													}													
+													?>
+												</select>
+											</div>
+										</div>
+
+
+
+
+
+
+
+
+										if($("#branch_id_hrad").val() != ''){
+												var branch_sele_id = $("#branch_id_hrad").val();
+											}else{
+												var branch_sele_id = "<?php echo rahat_encode($_SESSION['super_admin']['branch']); ?>";
+											}
+											var table_info = '?branch_id='+branch_sele_id;
+											var condition = table_info;	
+
+
+
+
+
+
+
+
+										function booking_report_table(){
+											if($("#branch_id_hrad").val() != ''){
+												var branch_sele_id = $("#branch_id_hrad").val();
+											}else{
+												var branch_sele_id = "<?php echo rahat_encode($_SESSION['super_admin']['branch']); ?>";
+											}
+											var table_info = '?branch_id='+branch_sele_id;
+											var condition = table_info;	
+											var ajax_data = "<?=base_url(); ?>assets/ajax/data_table/booking_information_datatable.php"+condition;
+											$('#booking_data_table').DataTable().ajax.url(ajax_data).load();
+										}	
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										{ ?>
+													<button onclick="return get_bet_info_at(<?php echo $bed['id']; ?>)" class="btn btn-info btn-sm" id="" type="button" style="width:100%;margin-bottom: 10px;"> <?php echo substr($bed['bed_name'],4); ?></button>
+<?php }
+
+
+
+pattern="[0-9]{11}"
+
+08ec6

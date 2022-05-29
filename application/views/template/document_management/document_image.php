@@ -1,0 +1,1 @@
+<img width="100%" src="<?php echo base_url("assets/uploads/documents/".$results->file_url); ?>" />

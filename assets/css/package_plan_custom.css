@@ -1,0 +1,189 @@
+/* body{
+    font-family: 'Ubuntu', sans-serif;
+    background-image: linear-gradient(to right, rgba(79, 195, 247, 0.4),rgba(255, 138, 101, 0.4));
+} */
+.card{
+    background: #f5f5f5;
+}
+
+.card.text-center .card-header{
+    color: white;
+    background-color: #343a40;
+}
+
+p{
+    font-size: 21px;
+    padding-left: 2%;
+}
+
+small.danger{
+    color: red;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover{
+    color: inherit;
+}
+
+.button.book{
+    text-decoration: none;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+
+.button.parking{
+    width: 40%;
+}
+
+img{
+    float: left;
+}
+
+.expense{
+    text-align: right;
+}
+
+.row{
+    margin-bottom: 5%;
+}
+
+.solid {
+    border-top: 1px solid #e0e0e0;
+    border-radius: 50px;
+    transition: 1000ms;
+}
+
+.button{
+    outline:none;
+    margin: 2%;
+    padding: 2%;
+    color: black;
+    border: 0;
+    border-radius: 10px;
+    background-color: #fafafa;
+    box-shadow: 0px 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* .button:active {
+} */
+
+.button:hover{
+    outline:none;
+    background-color: #66bb6a;
+    color: white;
+    transition: 400ms;
+}
+
+.button.selected{
+    outline: none;
+    color: white;
+    background-color: #66bb6a;
+    box-shadow: none;
+}
+
+.park{
+    outline:none;
+    margin: 2%;
+    padding: 2%;
+    color: black;
+    border: 1px solid #9e9e9e;
+    border-radius: 10px;
+    background-color: #fafafa;
+    box-shadow: 0px 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+/* The container */
+.parking_label {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: inherit;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.parking_label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.parking_label:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.parking_label input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.parking_label input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.parking_label .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+
+@media only screen and (max-width: 768px) {
+    /* .modal-content {
+        width: 300px;
+        border:none;
+    }    
+    .modal{
+        top: 10%;
+        left: 5%;
+    } */    
+    #hide_dropdown, #hide_pkg_ctg_dropdown, #hide_pkg_name_dropdown {
+        max-height: 1080px;
+        opacity: 1;
+        -webkit-transition: opacity 0.1s, max-height 0.3s;
+        -moz-transition: opacity 0.1s, max-height 0.3s;
+        -o-transition: opacity 0.1s, max-height 0.3s;
+        transition: opacity 0.1s, max-height 0.3s;
+    }
+      
+    #hide_dropdown.hide_dropdown_menu, #hide_pkg_ctg_dropdown.hide_dropdown_menu, #hide_pkg_name_dropdown.hide_dropdown_menu {
+        max-height: 0px;
+        opacity: 0;
+    }
+}
